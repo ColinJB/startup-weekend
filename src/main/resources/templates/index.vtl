@@ -1,4 +1,10 @@
-<h1>Welcome to Start-Up Weekend!</h1>
-
-<a href="/teams">View Team List</a>
-<a href="/teams/new">Add a New Team</a>
+<div class=jumbotron><h1 style="color: #00cc00;font-family: Copperplate, "Copperplate Gothic Light", fantasy;">Welcome to Start-Up Weekend!</h1></div><br>
+<a href="/info"><h3>What is Start-Up Weekend?</h3></a>
+<br>
+<h3>All teams</h3>
+<ul>
+  #foreach ($team in $teams)
+    <li><a href="/teams/$team.getId()">$team.getName()</a></li>
+  #end
+</ul>
+<a href="/teams/new">Add New Team</a>
