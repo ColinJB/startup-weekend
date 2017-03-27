@@ -1,24 +1,24 @@
 import java.util.List;
 import java.util.ArrayList;
 
-public class Category {
+public class Team {
   private String mName;
-  private static ArrayList<Category> instances = new ArrayList<Category>();
+  private static ArrayList<Team> instances = new ArrayList<Team>();
   private int mId;
-  private List<Task> mTasks;
+  private List<Member> mMembers;
 
-  public Category(String name) {
+  public Team(String name) {
     mName = name;
     instances.add(this);
     mId = instances.size();
-    mTasks = new ArrayList<Task>();
+    mMembers = new ArrayList<Member>();
   }
 
   public String getName() {
     return mName;
   }
 
-  public static ArrayList<Category> all() {
+  public static ArrayList<Team> all() {
    return instances;
   }
 
@@ -30,16 +30,16 @@ public class Category {
     return mId;
   }
 
-  public static Category find(int id) {
+  public static Team find(int id) {
    return instances.get(id - 1);
  }
 
-  public List<Task> getTasks() {
-    return mTasks;
+  public List<Member> getMembers() {
+    return mMembers;
   }
 
-  public void addTask(Task task) {
-    mTasks.add(task);
+  public void addMember(Member task) {
+    mMembers.add(task);
   }
 
 }
